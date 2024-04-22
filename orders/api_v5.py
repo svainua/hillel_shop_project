@@ -1,8 +1,8 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404  # noqa
 from rest_framework import permissions, serializers, viewsets  # noqa
 from rest_framework.decorators import action, api_view, permission_classes  # noqa
-from rest_framework.request import Request
-from rest_framework.response import Response
+from rest_framework.request import Request  # noqa
+from rest_framework.response import Response  # noqa
 
 from .models import Order
 
