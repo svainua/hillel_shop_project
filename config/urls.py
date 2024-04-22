@@ -1,11 +1,9 @@
 from django.urls import path  # noqa
 from rest_framework.routers import DefaultRouter  # noqa
 
-from orders.api_v1 import (
-    OrderItemListCreateAPI,
-    OrderListCreateAPI,  # noqa
-    OrderRetrieveUpdateDeleteAPI,
-)
+from orders.api_v1 import OrderItemListCreateAPI  # noqa
+from orders.api_v1 import OrderListCreateAPI  # noqa
+from orders.api_v1 import OrderRetrieveUpdateDeleteAPI  # noqa; noqa
 from orders.api_v5 import orders_list_create, orders_retrieve  # noqa
 from products.api import ProductListCreateAPI, ProductRetrieveUpdateDeleteAPI  # noqa
 

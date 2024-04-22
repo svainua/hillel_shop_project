@@ -4,7 +4,7 @@ from rest_framework.decorators import action, api_view, permission_classes  # no
 from rest_framework.request import Request  # noqa
 from rest_framework.response import Response  # noqa
 
-from .models import Order
+from .models import Order  # noqa
 
 
 class OrderItemProductSerializer(serializers.Serializer):
