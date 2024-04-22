@@ -34,6 +34,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey(
         "orders.Order", on_delete=models.CASCADE, related_name="items"
     )
+    # order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey("products.Product", on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
 
@@ -44,3 +45,7 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f"{self.product}: {self.quantity}"
+
+
+# OrderItem.objects.get(id=13).product
+# OrderItem.objects.get(id=13).items.all() items позволяет получить все элементы, которые входят в этот запрос благодаря related_name #noqa

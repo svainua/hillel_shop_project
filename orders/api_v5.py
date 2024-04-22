@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
-from rest_framework import permissions, serializers, viewsets
-from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework import permissions, serializers, viewsets  # noqa
+from rest_framework.decorators import action, api_view, permission_classes  # noqa
 from rest_framework.request import Request
 from rest_framework.response import Response
 

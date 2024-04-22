@@ -1,7 +1,12 @@
 from django.urls import path
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import DefaultRouter  # noqa
 
-from orders.api_v5 import orders_list_create, orders_retrieve
+from orders.api_v1 import (
+    OrderItemListCreateAPI,
+    OrderListCreateAPI,
+    OrderRetrieveUpdateDeleteAPI,
+)
+from orders.api_v5 import orders_list_create, orders_retrieve  # noqa
 from products.api import ProductListCreateAPI, ProductRetrieveUpdateDeleteAPI
 
 # from orders.api_v4 import OrdersAPISetV2
@@ -17,35 +22,29 @@ from products.api import ProductListCreateAPI, ProductRetrieveUpdateDeleteAPI
 # )
 
 
-# from orders.api_v1 import (
-#     OrderItemListCreateAPI,
-#     OrderListCreateAPI,
-#     OrderRetrieveUpdateDeleteAPI,
-# )
-
-
-# urlpatterns = [
-#     path(
-#         "products/",
-#         ProductListCreateAPI.as_view(),
-#     ),
-#     path(
-#         "products/<int:id>/",
-#         ProductRetrieveUpdateDeleteAPI.as_view(),
-#     ),
-#     path(
-#         "orders/",
-#         OrderListCreateAPI.as_view(),
-#     ),
-#     path(
-#         "orders/<int:id>/",
-#         OrderRetrieveUpdateDeleteAPI.as_view(),
-#     ),
-#     path(
-#         "orders/items/",
-#         OrderItemListCreateAPI.as_view(),
-#     ),
-# ]
+# V2
+urlpatterns = [
+    path(
+        "products/",
+        ProductListCreateAPI.as_view(),
+    ),
+    path(
+        "products/<int:id>/",
+        ProductRetrieveUpdateDeleteAPI.as_view(),
+    ),
+    path(
+        "orders/",
+        OrderListCreateAPI.as_view(),
+    ),
+    path(
+        "orders/<int:id>/",
+        OrderRetrieveUpdateDeleteAPI.as_view(),
+    ),
+    path(
+        "orders/items/",
+        OrderItemListCreateAPI.as_view(),
+    ),
+]
 
 # V3
 # urlpatterns = [
@@ -69,7 +68,7 @@ from products.api import ProductListCreateAPI, ProductRetrieveUpdateDeleteAPI
 # ]
 
 # V4
-urlpatterns = []
+# urlpatterns = []
 
 # it could be imported from the ``orders.router.py``  ¯\_(ツ)_/¯
 # orders_router = DefaultRouter()
@@ -79,7 +78,7 @@ urlpatterns = []
 
 
 # V5
-urlpatterns = [
-    path("orders/", orders_list_create),
-    path("orders/<int:id>/", orders_retrieve),
-]
+# urlpatterns = [
+#     path("orders/", orders_list_create),
+#     path("orders/<int:id>/", orders_retrieve),
+# ]
